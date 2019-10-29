@@ -11,12 +11,12 @@ indexRouter = require('./routes/index'),
 usersRouter = require('./routes/user'),
 postsRouter = require('./routes/post'),
 session = require('express-session');
-
+const db = require("./config/db");
 var app = express();
 
 
 //connect with BD
-var mongoDB = 'mongodb+srv://user:12345@cluster0-51bgn.mongodb.net/test?retryWrites=true&w=majority';
+var mongoDB = db.mongoURI;
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 mongoose.connection.on('connected', function () {
   console.log('Mongoose success');
