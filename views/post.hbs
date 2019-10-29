@@ -1,0 +1,37 @@
+<div>
+    <form id="postar" method="post" class="form-geral formulario" action="/posts/postar">
+        <h1>Postar</h1>
+        <div class="campo">
+            <textarea name="post" id="post" maxlength="140" placeholder="Digite sua publicação" rows="5" cols="80"></textarea>
+        </div>
+        <div class="campo">
+            <input type="submit" value="Enviar">
+        </div>
+        <ul id="validacoes">
+        </ul>
+    </form>
+</div>
+
+<script>
+
+    (function () {
+        let form = document.querySelector('#postar'),
+            httpRequest = new XMLHttpRequest(),
+            validacoes = document.querySelector('#validacoes');
+
+        form.addEventListener("submit", function (ev) {
+            ev.preventDefault();
+            validacoes.innerHTML = "";
+            httpRequest.open("post", form.getAttribute('action'));
+            httpRequest.send(new FormData(this));
+
+            httpRequest.onreadystatechange = function () {
+                if (httpRequest.readyState === 4) {
+                    for (post of JSON.parse(this.responseText))
+                        validacoes.innerHTML += '<li>' + post.message + '</li>';
+                }
+            }
+            document.getElementById("post").value = "";
+        })
+    }())
+</script>

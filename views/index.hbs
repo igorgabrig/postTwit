@@ -34,7 +34,7 @@
                     for (msg of JSON.parse(this.responseText)) {
                         resposta.innerHTML += '<li>' + msg.message + '</li>';
                         if (msg.message === 'Sucesso')
-                            window.location.replace("/users/amigos");
+                            window.location.replace("/posts/feed");
                     }
                 }
 
