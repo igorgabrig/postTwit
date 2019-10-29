@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PostTwit</title>
+    
+      <link rel='stylesheet' href='/stylesheets/norm.css' />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+          <nav class="menu">
+            <p>{{#if logado}} Olá  {{logado}}  {{/if}}</p>
+          <ul>
+            {{#unless logado }}<li><a href="/">Login</a></li>{{/unless}}
+            {{#unless logado }}<li><a href="/users/cadastrar">Cadastrar</a></li>  {{/unless}}
+            {{#if logado }}<li><a href="/posts/feed">Feed</a> </li>{{/if}}
+            {{#if logado }}<li><a href="/users/amigos">Amigos</a> </li>{{/if}}
+            {{#if logado }}<li><a href="/posts/post">Publicar</a> </li>{{/if}}
+            {{#if logado }}<li><a href="/users/sair">Sair</a></li>{{/if}}
+          </ul>
+          </nav>
+      </header>
+
+    <div class="main">
+      {{{body}}}
+    </div>
+
+     </div>
+  </body>
+</html>

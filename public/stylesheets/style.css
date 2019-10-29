@@ -1,0 +1,98 @@
+body {
+  margin: 0 auto;
+  font: 14px , Arial, Helvetica, sans-serif;
+  color: #fff;
+  background-color: #363636;
+}
+iframe{
+  color: #fff;
+  min-height: 300px;
+}
+h1{
+  font-family: Arial, Helvetica, sans-serif;
+}
+a {
+  color: #00B7FF;
+}
+.wrapper{
+  margin: 0 auto;
+  color: #fff;
+  border-radius: 5px;
+  height: 100vh;
+}
+.menu{
+  display: flex;
+  flex: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #de4b4b;
+  width: 100%;
+  left: 0;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+.menu p{
+  margin-left: 10px;
+}
+.menu ul{
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  justify-content: flex-end;
+}
+.menu li{
+  list-style: none;
+  border-right: 1px solid #942f2f ;
+}
+.menu li a{
+  text-decoration: none;
+  font-size: 1rem;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+}
+.menu li a:hover{
+  background-color: #cf4444;
+  border: none;
+}
+.main{
+  padding-left: 0.5rem;
+  padding-right: 0.2rem;
+}
+.form-geral{
+  display: grid;
+  grid-template-columns: auto;
+  grid-row-gap: 2rem;
+}
+.campo input[type='submit']{
+  padding: 10px;
+  color: #fff;
+  border-radius: 5px;
+  background-color: #3384f5;
+}
+.campo input{
+  margin-top: 8px;
+  border: none;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  min-width: 250px;
+  color: #c7c7c7;
+  font-size: 1.2em;
+  border-radius: 50px;
+  background-color: #1c1c1c;
+  outline: none;  
+}
+.formulario{
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+  max-width: 50%;
+  margin: auto;
+  margin-top: 4rem; 
+}
+#validacoes{
+  color: #de4b4b;
+}

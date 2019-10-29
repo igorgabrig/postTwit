@@ -1,0 +1,43 @@
+<form id="cadastro" method="post" class="form-geral formulario" action="/users/cadastrar">
+    <h1>Cadastro</h1>
+    <div class="campo">
+        <label for="usuario">Usuário:</label><br />
+        <input name="usuario" type="text">
+    </div>
+    <div class="campo">
+        <label for="email">E-mail:</label><br />
+        <input name="email" type="email">
+    </div>
+    <div class="campo">
+        <label for="senha">Senha:</label><br />
+        <input name="senha" type="password">
+    </div>
+    <div class="campo">
+        <input type="submit" value="Enviar">
+    </div>
+    <ul id="validacoes">
+    </ul>
+</form>
+<script>
+    (function () {
+
+        let form = document.querySelector('#cadastro'),
+            httpRequest = new XMLHttpRequest(),
+            validacoes = document.querySelector('#validacoes');
+
+
+        form.addEventListener("submit", function (ev) {
+            ev.preventDefault();
+            validacoes.innerHTML = "";
+            httpRequest.open("post", form.getAttribute('action'));
+            httpRequest.send(new FormData(this));
+
+            httpRequest.onreadystatechange = function () {
+                if (httpRequest.readyState === 4) {
+                    for (msg of JSON.parse(this.responseText))
+                        validacoes.innerHTML += '<li>' + msg.message + '</li>';
+                }
+            }
+        })
+    }())
+</script>
