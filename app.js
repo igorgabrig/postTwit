@@ -16,7 +16,7 @@ var app = express();
 
 
 //connect with BD
-var mongoDB = 'mongodb://127.0.0.1/posttwit';
+var mongoDB = 'mongodb+srv://user:12345@cluster0-51bgn.mongodb.net/test?retryWrites=true&w=majority';
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 mongoose.connection.on('connected', function () {
   console.log('Mongoose success');

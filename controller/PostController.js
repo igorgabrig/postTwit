@@ -46,3 +46,17 @@ exports.post = function (req, res) {
         res.redirect('/');
     }
 };
+
+
+exports.feed = function (req, res) {
+    var remetente = req.session.key;
+    if (remetente == null) {
+        return res.redirect('/');
+    }
+
+    userModel.findOne({ "usuario": remetente }, function (err, doc){
+        postModel.find({ "remetente": doc.id }, function (err, docs) {
+            res.render('feed', {logado: req.session.key, posts: docs });
+        });
+    });
+};

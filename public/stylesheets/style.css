@@ -20,6 +20,20 @@ a {
   border-radius: 5px;
   height: 100vh;
 }
+textarea{
+  resize: none;
+  margin-top: 8px;
+  border: none;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  min-width: 250px;
+  color: #c7c7c7;
+  font-size: 1.2em;
+  border-radius: 5px;
+  background-color: #1c1c1c;
+  outline: none;  
+}
 .menu{
   display: flex;
   flex: row;
@@ -64,6 +78,49 @@ a {
 .container{
   padding-top: 2em;
 }
+.titulo{
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.postContainer{
+  display: flex;
+  justify-content: center;
+}
+.postContainer ul{
+  width: 800px;
+  height: 500px;
+  overflow: auto;
+}
+.postContainer ul::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.postContainer ul::-webkit-scrollbar-track {
+  background: #292929;
+  border-radius: 10px;
+}
+
+.postContainer ul::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #3384f5;  
+}
+
+.postContainer ul::-webkit-scrollbar-thumb:hover {
+  background: #2770d6;  
+}
+.postContainer ul li{
+  background-color: #292929;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 5px;
+}
 .listaAmigos{
   display: flex;
   justify-content: space-between;
@@ -72,6 +129,10 @@ a {
 .friends{
   display: flex;
   justify-content: space-around;
+}
+#janela{
+  margin-top: 1em;
+  width:100%;
 }
 .form-geral{
   display: grid;
@@ -131,6 +192,7 @@ a {
   margin: auto;
   margin-top: 4rem; 
 }
+
 #validacoes{
   color: #de4b4b;
 }
