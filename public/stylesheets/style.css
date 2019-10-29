@@ -61,6 +61,18 @@ a {
   padding-left: 0.5rem;
   padding-right: 0.2rem;
 }
+.container{
+  padding-top: 2em;
+}
+.listaAmigos{
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+}
+.friends{
+  display: flex;
+  justify-content: space-around;
+}
 .form-geral{
   display: grid;
   grid-template-columns: auto;
@@ -71,6 +83,13 @@ a {
   color: #fff;
   border-radius: 5px;
   background-color: #3384f5;
+}
+.friendUnfullow{
+  padding: 3px;
+  color: #fff;
+  border-radius: 3px;
+  background-color: #3384f5;
+  border: none;
 }
 .campo input{
   margin-top: 8px;
@@ -84,6 +103,25 @@ a {
   border-radius: 50px;
   background-color: #1c1c1c;
   outline: none;  
+}
+.searchFriends{
+  margin-top: 8px;
+  border: none;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #c7c7c7;
+  font-size: 1.2em;
+  border-radius: 5px;
+  background-color: #1c1c1c;
+  outline: none;  
+}
+.search{
+  padding: 13px;
+  color: #fff;
+  border-radius: 5px;
+  background-color: #3384f5;
+  border: none;
 }
 .formulario{
   padding: 10px;

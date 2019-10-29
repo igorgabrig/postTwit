@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="friends">
+        <div class="col-1">
+            <h1>Meus amigos</h1>
+            <ul>
+                {{#amigos}}
+                <li class="listaAmigos">{{this.usuario}} <button
+                        onclick="unfollow('{{this.id}}');" href="" class="friendUnfullow">Unfollow</button> </li>
+                {{/amigos}}
+            </ul>
+        </div>
+        <div class="buscar">
+            Buscar amigos <form action="/users/busca?q=" id="busca"><input id="termo" type="text" class="searchFriends"> <button class="search">Buscar
+                </button></form>
+            <iframe id="janela" src=""></iframe>
+        </div>
+
+    </div>
+</div>
+
+
+<script>
+    var resposta = document.querySelector('#janela');
+    function unfollow(id) {
+        resposta.src = '/users/unfollow?id=' + id;
+    }
+    (function () {
+        let form = document.querySelector('#busca'),
+            busca = document.querySelector('#termo');
+            
+        form.addEventListener("submit", function (ev) {
+            ev.preventDefault();
+            resposta.src = form.getAttribute('action') + busca.value;
+        })
+    }())
+</script>
