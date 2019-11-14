@@ -14,7 +14,7 @@ session = require('express-session');
 const db = require("./config/db");
 var app = express();
 
-
+app.use(cors({origin: true}));
 //connect with BD
 var mongoDB = 'mongodb+srv://user:12345@cluster0-51bgn.mongodb.net/test?retryWrites=true&w=majority';
 mongoose.connect(mongoDB, { useNewUrlParser: true });
